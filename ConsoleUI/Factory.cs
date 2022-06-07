@@ -22,9 +22,14 @@ namespace ConsoleUI
             return new Logger();
         }
 
+        /*
+         * We can easily swap out one implementation for another. High-level modules depend upon the abstraction, not
+         * the class that implements the interface.
+         */
         public static IMessageSender CreateMessageSender()
         {
-            return new Emailer();
+            //return new Emailer();
+            return new Texter();
         }
     }
 }
