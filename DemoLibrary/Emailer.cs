@@ -2,9 +2,9 @@
 
 namespace DemoLibrary
 {
-    public class Emailer
+    public class Emailer : IMessageSender
     {
-        public void SendEmail(IPerson person, string message)
+        public void SendMessage(IPerson person, string message)
         {
             Console.WriteLine($"Simulating sending an email to {person.EmailAddress}");
         }

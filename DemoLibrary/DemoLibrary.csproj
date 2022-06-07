@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Chore.cs" />
     <Compile Include="Emailer.cs" />
+    <Compile Include="IChore.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IMessageSender.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Person.cs" />

@@ -5,7 +5,7 @@
      * The Emailer and Logger are "low-level" modules. They are depended upon by Chore. They also don't depend upon any
      * other class.
      */
-    public class Chore
+    public class Chore : IChore
     {
         public string ChoreName { get; set; }
 
@@ -30,7 +30,7 @@
             log.Log($"Completed {ChoreName}");
 
             Emailer emailer = new Emailer();
-            emailer.SendEmail(Owner, $"The chore {ChoreName} is complete.");
+            emailer.SendMessage(Owner, $"The chore {ChoreName} is complete.");
         }
     }
 }
