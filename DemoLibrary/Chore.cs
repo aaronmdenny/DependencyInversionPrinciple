@@ -7,6 +7,10 @@
      */
     public class Chore : IChore
     {
+        ILogger _logger;
+
+        IMessageSender _messageSender;
+
         public string ChoreName { get; set; }
 
         public IPerson Owner { get; set; }
@@ -15,22 +19,25 @@
 
         public bool IsComplete { get; private set; }
 
+        public Chore(ILogger logger, IMessageSender messageSender)
+        {
+            _logger = logger;
+            _messageSender = messageSender;
+        }
+
         public void PerformedWork(double hours)
         {
             HoursWorked += hours;
-            Logger log = new Logger();
-            log.Log($"Performed work on {ChoreName}");
+
+            _logger.Log($"Performed work on {ChoreName}");
         }
 
         public void CompleteChore()
         {
             IsComplete = true;
 
-            Logger log = new Logger();
-            log.Log($"Completed {ChoreName}");
-
-            Emailer emailer = new Emailer();
-            emailer.SendMessage(Owner, $"The chore {ChoreName} is complete.");
+            _logger.Log($"Completed {ChoreName}");
+            _messageSender.SendMessage(Owner, $"The chore {ChoreName} is complete.");
         }
     }
 }

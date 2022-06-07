@@ -14,7 +14,7 @@ namespace ConsoleUI
 
         public static IChore CreateChore()
         {
-            return new Chore();
+            return new Chore(CreateLogger(), CreateMessageSender());
         }
 
         public static ILogger CreateLogger()
