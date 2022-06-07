@@ -3,6 +3,9 @@ using System;
 
 namespace ConsoleUI
 {
+    /*
+     * Program is a "high-levl" module. It depends upon Person and Chore.
+     */
     class Program
     {
         /*

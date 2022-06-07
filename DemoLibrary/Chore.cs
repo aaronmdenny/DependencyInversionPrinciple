@@ -1,5 +1,10 @@
 ﻿namespace DemoLibrary
 {
+    /*
+     * The Chore class is a "high-level" module because it depends upon the Logger and Emailer classes (initially).
+     * The Emailer and Logger are "low-level" modules. They are depended upon by Chore. They also don't depend upon any
+     * other class.
+     */
     public class Chore
     {
         public string ChoreName { get; set; }
