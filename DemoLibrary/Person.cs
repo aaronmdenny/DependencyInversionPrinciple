@@ -1,6 +1,6 @@
 ﻿namespace DemoLibrary
 {
-    public class Person
+    public class Person : IPerson
     {
         public string FirstName { get; set; }
 

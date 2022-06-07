@@ -11,10 +11,13 @@ namespace ConsoleUI
         /*
          * Dependency Inversion Principle: High-level modules should not depend upon low-level modules, but rather both
          * should depend upon abstractions. Those abstractions should not depend upon details.
+         * 
+         * We want to only "new up" an instance in one place where we can easily swap out the instance with another
+         * class that implements an interface.
          */
         static void Main(string[] args)
         {
-            Person owner = new Person
+            IPerson owner = new Person
             {
                 FirstName = "Tim",
                 LastName = "Corey",
